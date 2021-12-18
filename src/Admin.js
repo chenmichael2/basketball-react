@@ -29,15 +29,11 @@ const events = [
     },
 ];
 
-// const displayEvents = events.maps((event, idx) => {
-//     return (
-//         <tr key={idx}>
-//             <td width="5%"><i class="fa fa-bell-o"></i></td>
-//             <td>{event.title}</td>
-//             <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
-//         </tr>
-//     )
-// });
+const displayEvents = events.map((event, idx) => {
+    return (
+        <Event key={idx} index={idx} title={event.title} />
+    );
+});
 
 class Admin extends Component {
     render() {
@@ -185,17 +181,7 @@ class Admin extends Component {
                                             <div class="content">
                                                 <table class="table is-fullwidth is-striped">
                                                     <tbody>
-                                                        <tr>
-                                                            <td width="5%"><i class="fa fa-bell-o"></i></td>
-                                                            <td>fdsafdsafdsafdsafdsaf</td>
-                                                            <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td width="5%"><i class="fa fa-bell-o"></i></td>
-                                                            <td>fdsafdsafdsafdsafdsaf</td>
-                                                            <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
-                                                        </tr>
-                                                        {/* {displayEvents} */}
+                                                        {displayEvents}
                                                     </tbody>
                                                 </table>
                                             </div>

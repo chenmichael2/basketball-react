@@ -10,7 +10,7 @@ class Event extends Component {
             <div key={this.props.index}>
                 <td width="5%"><i class="fa fa-bell-o"></i></td>
                 <td>{this.props.title}</td>
-                <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
+                <td class="level-right"></td>
             </div>
         );
     }
