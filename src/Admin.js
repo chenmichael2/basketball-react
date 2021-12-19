@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import Event from './Event';
+import LeftBar from './LeftBar';
+import TopBar from './TopBar';
 
 const events = [
     {
@@ -29,9 +31,82 @@ const events = [
     },
 ];
 
+const leftBar = [
+    {
+        list: 'Man In The Arena: Tom Brady'
+    },
+    {
+        list: 'NFL PrimeTime'
+    },
+    {
+        list: 'NFL Turning Point'
+    },
+    {
+        list: 'NFL Matchup'
+    },
+    {
+        list: 'The Fantasy Show w/ Matthew Berry'
+    },
+    {
+        list: 'Detail, Super Bowl Archives, NFL Films and more'
+    },
+    {
+        list: 'PickCenter: Betting Guide'
+    }
+];
+
+const directory = [
+    {
+        link: 'Home'
+    },
+    {
+        link: 'Scores'
+    },
+    {
+        link: 'Schedule'
+    },
+    {
+        link: 'Standings'
+    },
+    {
+        link: 'Stats'
+    },
+    {
+        link: 'Teams'
+    },
+    {
+        link: 'Fantacy Football'
+    },
+    {
+        link: 'NFL Daily Lines'
+    },
+    {
+        link: "Pigskin Playoff Pick'em"
+    },
+    {
+        link: 'Depth Charts'
+    },
+    {
+        link: 'More'
+    },
+
+];
+
+const displayTopBar = directory.map((item, idx) => {
+    return (
+        <TopBar key={idx} index={idx} link={item.link} />
+    );
+})
+
 const displayEvents = events.map((event, idx) => {
     return (
         <Event key={idx} index={idx} title={event.title} />
+    );
+});
+
+const displayLeftBar = leftBar.map((item, idx) => {
+    return (
+        <LeftBar key={idx} index={idx} list={item.list} />
     );
 });
 
@@ -43,7 +118,7 @@ class Admin extends Component {
                     <div class="container">
                         <div class="navbar-brand">
                             <a class="navbar-item brand-text" href="../index.html">
-                                Bulma Admin
+                                NFL
                             </a>
                             <div class="navbar-burger burger" data-target="navMenu">
                                 <span></span>
@@ -53,21 +128,7 @@ class Admin extends Component {
                         </div>
                         <div id="navMenu" class="navbar-menu">
                             <div class="navbar-start">
-                                <a class="navbar-item" href="admin.html">
-                                    Home
-                                </a>
-                                <a class="navbar-item" href="admin.html">
-                                    Orders
-                                </a>
-                                <a class="navbar-item" href="admin.html">
-                                    Payments
-                                </a>
-                                <a class="navbar-item" href="admin.html">
-                                    Exceptions
-                                </a>
-                                <a class="navbar-item" href="admin.html">
-                                    Reports
-                                </a>
+                                {displayTopBar}
                             </div>
 
                         </div>
@@ -78,40 +139,10 @@ class Admin extends Component {
                         <div class="column is-3 ">
                             <aside class="menu is-hidden-mobile">
                                 <p class="menu-label">
-                                    General
+                                    ESPN+
                                 </p>
                                 <ul class="menu-list">
-                                    <li><a class="is-active">Dashboard</a></li>
-                                    <li><a>Customers</a></li>
-                                    <li><a>Other</a></li>
-                                </ul>
-                                <p class="menu-label">
-                                    Administration
-                                </p>
-                                <ul class="menu-list">
-                                    <li><a>Team Settings</a></li>
-                                    <li>
-                                        <a>Manage Your Team</a>
-                                        <ul>
-                                            <li><a>Members</a></li>
-                                            <li><a>Plugins</a></li>
-                                            <li><a>Add a member</a></li>
-                                            <li><a>Remove a member</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a>Invitations</a></li>
-                                    <li><a>Cloud Storage Environment Settings</a></li>
-                                    <li><a>Authentication</a></li>
-                                    <li><a>Payments</a></li>
-                                </ul>
-                                <p class="menu-label">
-                                    Transactions
-                                </p>
-                                <ul class="menu-list">
-                                    <li><a>Payments</a></li>
-                                    <li><a>Transfers</a></li>
-                                    <li><a>Balance</a></li>
-                                    <li><a>Reports</a></li>
+                                    {displayLeftBar}
                                 </ul>
                             </aside>
                         </div>
