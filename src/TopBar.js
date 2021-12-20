@@ -7,11 +7,9 @@ class TopBar extends Component {
 
     render() {
         return (
-            <div key={this.props.index}>
-                <a class="navbar-item" href="admin.html">
+                <a class="navbar-item" href="admin.html" key={this.props.index}>
                     {this.props.link}
                 </a>
-            </div>
         )
     }
 }
