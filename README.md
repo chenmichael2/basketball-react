@@ -12,6 +12,9 @@ Commands are given through the terminal in the followig order
 
 To install this app, `git clone` the link and `npm start` to start the app. To test aspects of the app, run `npm test`. 
 
+![image](https://user-images.githubusercontent.com/92696290/146815188-319d2a07-f1be-4664-bc6d-820091279feb.png)
+
+
 # Football Event data
 
 ![image](https://user-images.githubusercontent.com/92696290/146623399-918846c3-fbd6-47df-b975-ffa56155855c.png)
